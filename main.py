@@ -1,12 +1,15 @@
-import json, logging, re, requests, asyncio
+import json, logging, re, requests, asyncio, os
 from datetime import datetime, timedelta
 from aiogram import Bot, Dispatcher, types
 from aiogram.filters import CommandStart, Command, StateFilter
 from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import State, StatesGroup
 from aiogram.fsm.storage.memory import MemoryStorage
+from dotenv import load_dotenv
 
-API_TOKEN = 'TELEGRAM_TOKEN'
+load_dotenv()
+
+API_TOKEN = os.getenv("BOT_TOKEN")
 
 logging.basicConfig(level=logging.INFO)
 
